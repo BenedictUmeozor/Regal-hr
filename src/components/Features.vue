@@ -2,8 +2,25 @@
 import { FEATURES } from '@/lib/constants'
 import Container from './Container.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { ref } from 'vue'
+import { Navigation } from 'swiper/modules'
+
+const swiperInstance = ref<SwiperType | null>(null)
+
+const onSwiper = (swiper: SwiperType) => {
+  swiperInstance.value = swiper
+}
+
+const slidePrev = () => {
+  swiperInstance.value?.slidePrev()
+}
+
+const slideNext = () => {
+  swiperInstance.value?.slideNext()
+}
 </script>
 
 <template>
@@ -22,40 +39,59 @@ import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
         <p>{{ feature.description }}</p>
       </div>
     </Container>
-    <Container class="lg:hidden">
-      <swiper
-        :slides-per-view="1"
-        :navigation="true"
-        :breakpoints="{
-          '640': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          '1024': {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        }"
-        class="feature-swiper"
-      >
-        <swiper-slide v-for="feature in FEATURES" :key="feature.title">
-          <div class="border border-gray-300 rounded p-6 space-y-4">
-            <header class="flex items-center justify-start">
-              <img :src="feature.iconPath" :alt="feature.title" class="w-10" />
-            </header>
-            <h4 class="text-xl font-semibold text-primary">
-              {{ feature.title }}
-            </h4>
-            <p>{{ feature.description }}</p>
-          </div>
-        </swiper-slide>
-      </swiper>
-      <div value="flex items-center justify-center gap-4">
-        <button>
-          <ChevronLeft class="w-12 h-12" />
+    <Container class="lg:hidden space-y-6">
+      <div>
+        <swiper
+          @swiper="onSwiper"
+          :modules="[Navigation]"
+          :slides-per-view="1"
+          :navigation="true"
+          :breakpoints="{
+            '640': {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            '1024': {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }"
+        >
+          <swiper-slide v-for="feature in FEATURES" :key="feature.title">
+            <div
+              class="border border-gray-300 rounded p-6 space-y-4 sm:aspect-[6/4] w-full"
+            >
+              <header class="flex items-center justify-start">
+                <img
+                  :src="feature.iconPath"
+                  :alt="feature.title"
+                  class="w-10"
+                />
+              </header>
+              <h4 class="text-xl font-semibold text-primary">
+                {{ feature.title }}
+              </h4>
+              <p>{{ feature.description }}</p>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        <button
+          @click="slidePrev"
+          type="button"
+          aria-label="Previous slide"
+          class="p-2 rounded-full border hover:bg-gray-100"
+        >
+          <ChevronLeft class="w-6 h-6" />
         </button>
-        <button>
-          <ChevronRight class="w-12 h-12" />
+        <button
+          @click="slideNext"
+          type="button"
+          aria-label="Next slide"
+          class="p-2 rounded-full border hover:bg-gray-100"
+        >
+          <ChevronRight class="w-6 h-6" />
         </button>
       </div>
     </Container>
