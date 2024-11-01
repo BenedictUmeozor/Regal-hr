@@ -5,13 +5,13 @@ import { Button } from './ui/button'
 </script>
 
 <template>
-  <section class="bg-custom-dark text-white py-16">
+  <section class="bg-custom-dark text-white py-8 lg:py-16">
     <Container
       class="grid lg:items-center grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-24"
     >
       <div>
         <h1
-          class="font-bold text-3xl md:text-4xl lg:text-5xl mb-4 tracking-wide leading-normal"
+          class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 tracking-wide lg:leading-normal"
         >
           Revolutionize Your HR Management with Ease
         </h1>
