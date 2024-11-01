@@ -6,11 +6,11 @@ import Container from './Container.vue'
     <Container
       class="grid lg:items-center grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24"
     >
-      <div>
+      <div class="py-10 px-14 border-2 border-[#C7A2FD] rounded-xl">
         <img
           src="/data-analysis.png"
           alt="data-analysis"
-          class="object-cover w-full aspect-square"
+          class="object-contain w-full aspect-square"
         />
       </div>
       <div class="space-y-4">

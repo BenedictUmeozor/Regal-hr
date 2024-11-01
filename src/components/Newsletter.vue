@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 </script>
@@ -8,7 +9,7 @@ import { Input } from './ui/input'
     <div
       class="max-w-6xl w-[90%] mx-auto text-center py-8 lg:py-12 px-8 rounded-md bg-[#381669] text-white"
     >
-      <div class="lg:max-w-md mx-auto">
+      <div class="lg:max-w-lg mx-auto">
         <h4 class="font-bold text-xl lg:text-3xl mb-6 lg:mb-8">
           Stay Updated with the Latest HR Trends
         </h4>
@@ -18,9 +19,12 @@ import { Input } from './ui/input'
           practices and our latest features.
         </p>
         <div class="relative">
-          <Input placeholder="Enter your mail" class="w-full text-black" />
+          <Input
+            placeholder="Enter your mail"
+            :class="cn('w-full text-black placeholder:text-xs py-6')"
+          />
           <Button
-            class="absolute top-1/2 -translate-y-1/2 right-1 bg-black text-white font-semibold hover:bg-black/80"
+            class="absolute top-1/2 -translate-y-1/2 right-2 bg-black text-white font-semibold hover:bg-black/80"
             >Subscribe</Button
           >
         </div>

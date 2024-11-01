@@ -20,7 +20,7 @@ const handleClose = () => {
     <Container class="flex items-center justify-between">
       <a
         href="#"
-        class="text-xl font-medium md:text-3xl hover:text-custom-light"
+        class="text-xl font-medium md:text-4xl hover:text-custom-light"
       >
         Regal HR
       </a>
@@ -33,7 +33,9 @@ const handleClose = () => {
       </nav>
       <div class="hidden lg:flex items-center gap-2">
         <Button variant="ghost" :class="cn('text-base')">Support</Button>
-        <Button :class="cn('text-base hover:bg-purple-500')">Sign in</Button>
+        <Button size="lg" :class="cn(' hover:bg-purple-500 rounded-full')"
+          >Sign in</Button
+        >
       </div>
       <button class="lg:hidden" variant="ghost" @click.stop="toggleOpen">
         <XIcon v-if="open" class="w-8 h-8" />

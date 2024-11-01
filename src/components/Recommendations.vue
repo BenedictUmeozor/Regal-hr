@@ -33,14 +33,14 @@ const slideNext = () => {
         10k+ startups and companies choose RegalHR. Hear What They Have to Say
         abou Us
       </p>
-      <div class="hidden lg:grid grid-cols-4 gap-4">
+      <div class="hidden grid-cols-4 gap-4">
         <div
           v-for="item in RECOMMENDATIONS"
           :key="item.avatarPath"
           class="relative text-center space-y-4 p-6 bg-[#ECDFFF] rounded-md"
         >
           <div
-            class="h-14 w-14 rounded-full flex items-center justify-center border-2 border-black p-1 mx-auto"
+            class="h-14 w-14 rounded-full flex items-center justify-center border-2 border-black p-1 mx-auto absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <img
               :src="item.avatarPath"
@@ -52,7 +52,7 @@ const slideNext = () => {
           <p class="md:text-sm">{{ item.secondText }}</p>
         </div>
       </div>
-      <div class="lg:hidden">
+      <div>
         <swiper
           @swiper="onSwiper"
           :modules="[Navigation]"
@@ -72,7 +72,7 @@ const slideNext = () => {
         >
           <swiper-slide v-for="item in RECOMMENDATIONS" :key="item.avatarPath">
             <div
-              class="relative text-center space-y-4 p-6 bg-[#ECDFFF] rounded-md"
+              class="relative text-center flex flex-col gap-4 aspect-[6/4] p-6 bg-[#ECDFFF] rounded-md"
             >
               <div
                 class="h-14 w-14 rounded-full flex items-center justify-center border-2 border-black p-1 mx-auto"

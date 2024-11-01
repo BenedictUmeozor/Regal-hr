@@ -22,9 +22,11 @@ import Container from './Container.vue'
           <h5 class="font-semibold text-lg">Company</h5>
           <ul class="space-y-4">
             <li v-for="link in COMPANYLINKS" :key="link">
-              <a href="#" class="font-light hover:text-custom-light">{{
-                link
-              }}</a>
+              <a
+                href="#"
+                class="font-light hover:text-custom-light text-white/70"
+                >{{ link }}</a
+              >
             </li>
           </ul>
         </div>
@@ -32,9 +34,11 @@ import Container from './Container.vue'
           <h5 class="font-semibold text-lg">Product</h5>
           <ul class="space-y-4">
             <li v-for="link in PRODUCTLINKS" :key="link">
-              <a href="#" class="font-light hover:text-custom-light">{{
-                link
-              }}</a>
+              <a
+                href="#"
+                class="font-light hover:text-custom-light text-white/70"
+                >{{ link }}</a
+              >
             </li>
           </ul>
         </div>
@@ -42,9 +46,11 @@ import Container from './Container.vue'
           <h5 class="font-semibold text-lg">Resources</h5>
           <ul class="space-y-4">
             <li v-for="link in RESOURCELINKS" :key="link">
-              <a href="#" class="font-light hover:text-custom-light">{{
-                link
-              }}</a>
+              <a
+                href="#"
+                class="font-light hover:text-custom-light text-white/70"
+                >{{ link }}</a
+              >
             </li>
           </ul>
         </div>
@@ -52,9 +58,11 @@ import Container from './Container.vue'
           <h5 class="font-semibold text-lg">Contact</h5>
           <ul class="space-y-4">
             <li v-for="link in CONTACTLINKS" :key="link">
-              <a href="#" class="font-light hover:text-custom-light">{{
-                link
-              }}</a>
+              <a
+                href="#"
+                class="font-light hover:text-custom-light text-white/70"
+                >{{ link }}</a
+              >
             </li>
           </ul>
         </div>
@@ -62,9 +70,11 @@ import Container from './Container.vue'
           <h5 class="font-semibold text-lg">Legal</h5>
           <ul class="space-y-4">
             <li v-for="link in LEGALLINKS" :key="link">
-              <a href="#" class="font-light hover:text-custom-light">{{
-                link
-              }}</a>
+              <a
+                href="#"
+                class="font-light hover:text-custom-light text-white/70"
+                >{{ link }}</a
+              >
             </li>
           </ul>
         </div>

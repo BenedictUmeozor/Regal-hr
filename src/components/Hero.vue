@@ -2,6 +2,9 @@
 import { cn } from '@/lib/utils'
 import Container from './Container.vue'
 import { Button } from './ui/button'
+import { useMediaQuery } from '@vueuse/core'
+
+const isLargeScreen = useMediaQuery('(min-width: 768px)')
 </script>
 
 <template>
@@ -11,11 +14,11 @@ import { Button } from './ui/button'
     >
       <div>
         <h1
-          class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 tracking-wide lg:leading-normal"
+          class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4 tracking-wide lg:leading-[76px]"
         >
           Revolutionize Your HR Management with Ease
         </h1>
-        <p class="mb-8">
+        <p class="mb-8 lg:text-xl">
           Empower your team with our all-in-one HR SaaS solution. Simplify
           processes, enhance productivity, and foster a happier workplace.
         </p>
@@ -23,14 +26,12 @@ import { Button } from './ui/button'
           class="flex flex-col md:flex-row items-center gap-4 md:gap-2 lg:gap-4 lg:max-w-xs"
         >
           <Button
-            :class="
-              cn(
-                'max-md:w-full flex-1 hover:border-input border border-transparent',
-              )
-            "
+            :size="isLargeScreen ? 'lg' : 'default'"
+            :class="cn('max-md:w-full flex-1 hover:bg-purple-500')"
             >Request a Demo</Button
           >
           <Button
+            :size="isLargeScreen ? 'lg' : 'default'"
             :class="
               cn(
                 'max-md:w-full flex-1 bg-transparent hover:bg-primary hover:text-white',
@@ -43,7 +44,7 @@ import { Button } from './ui/button'
       </div>
       <div class="relative">
         <div
-          class="hidden lg:block absolute h-full w-full -top-10 -left-20 border-2 border-primary rounded-xl"
+          class="hidden lg:block absolute h-full w-full -top-10 -left-12 border-2 border-custom-light rounded-xl"
         ></div>
         <div class="aspect-square relative z-10">
           <img

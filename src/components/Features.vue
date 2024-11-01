@@ -30,13 +30,13 @@ const slideNext = () => {
       <div
         v-for="feature in FEATURES"
         :key="feature.iconPath"
-        class="border w-[30%] border-gray-300 rounded p-6 space-y-4"
+        class="border w-[30%] border-gray-300 hover:bg-custom-dark cursor-pointer group rounded p-6 space-y-4"
       >
         <header class="flex items-center justify-start">
           <img :src="feature.iconPath" :alt="feature.title" class="w-10" />
         </header>
         <h4 class="text-xl font-semibold text-primary">{{ feature.title }}</h4>
-        <p>{{ feature.description }}</p>
+        <p class="group-hover:text-white">{{ feature.description }}</p>
       </div>
     </Container>
     <Container class="lg:hidden space-y-6">
@@ -60,7 +60,7 @@ const slideNext = () => {
         >
           <swiper-slide v-for="feature in FEATURES" :key="feature.title">
             <div
-              class="border border-gray-300 rounded p-6 space-y-4 sm:aspect-[6/4] w-full"
+              class="border border-gray-300 cursor-pointer rounded p-6 flex flex-col gap-4 aspect-[6/4] w-full"
             >
               <header class="flex items-center justify-start">
                 <img
