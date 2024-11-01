@@ -45,6 +45,7 @@ const slideNext = () => {
           @swiper="onSwiper"
           :modules="[Navigation]"
           :slides-per-view="1"
+          :space-between="10"
           :navigation="true"
           :breakpoints="{
             '640': {

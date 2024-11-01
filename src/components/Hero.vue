@@ -19,7 +19,7 @@ import { Button } from './ui/button'
           Empower your team with our all-in-one HR SaaS solution. Simplify
           processes, enhance productivity, and foster a happier workplace.
         </p>
-        <div class="flex items-center gap-4 lg:max-w-xs">
+        <div class="flex items-center gap-1 md:gap-2 lg:gap-4 lg:max-w-xs">
           <Button
             :class="cn('flex-1 hover:border-input border border-transparent')"
             >Request a Demo</Button
