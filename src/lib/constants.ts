@@ -2,6 +2,7 @@ interface Feature {
   iconPath: string
   title: string
   description: string
+  hoverPath: string
 }
 
 interface Recommends {
@@ -38,30 +39,35 @@ export const FEATURES: Feature[] = [
     title: 'Recruitment and Onboarding',
     description:
       'Simplify your hiring process with our seamless recruitment tools. Automate onboarding to make new hires feel welcome from day one.',
+    hoverPath: '/onboard-white.svg',
   },
   {
     iconPath: '/performance.svg',
     title: 'Performance Management',
     description:
       'Track employee performance effortlessly. Set goals, provide feedback, and conduct evaluations all in one place.',
+    hoverPath: '/performance-white.svg',
   },
   {
     iconPath: '/group.svg',
     title: 'Compliance and Reporting',
     description:
       'Stay compliant with labor laws and regulations. Generate comprehensive reports with minimal effort.',
+    hoverPath: '/group-white.svg',
   },
   {
     iconPath: '/analytics.svg',
     title: 'HR Analytics and Reporting',
     description:
       'Empower your team and build a thriving company culture with our employee engagement features, such as recognition programs and pulse surveys.',
+    hoverPath: '/analytics-white.svg',
   },
   {
     iconPath: '/attendance.svg',
     title: 'Time and Attendance',
     description:
       'Manage time and attendance with ease. Our system integrates with your existing workflows to ensure accurate tracking and reporting.',
+    hoverPath: '/attendance-white.svg',
   },
 ]
 

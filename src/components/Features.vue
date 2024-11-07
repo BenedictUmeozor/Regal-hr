@@ -33,7 +33,16 @@ const slideNext = () => {
         class="border w-[30%] border-gray-300 hover:bg-custom-dark cursor-pointer group rounded p-6 space-y-4"
       >
         <header class="flex items-center justify-start">
-          <img :src="feature.iconPath" :alt="feature.title" class="w-10" />
+          <img
+            :src="feature.iconPath"
+            :alt="feature.title"
+            class="w-10 group-hover:hidden"
+          />
+          <img
+            :src="feature.hoverPath"
+            :alt="feature.title"
+            class="w-10 hidden group-hover:block"
+          />
         </header>
         <h4 class="text-xl font-semibold text-primary">{{ feature.title }}</h4>
         <p class="group-hover:text-white">{{ feature.description }}</p>
