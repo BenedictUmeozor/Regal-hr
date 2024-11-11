@@ -4,7 +4,7 @@ import Container from './Container.vue'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 import { MenuIcon, XIcon } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import MobileNav from './MobileNav.vue'
 
 const open = ref(false)
@@ -13,10 +13,22 @@ const toggleOpen = () => (open.value = !open.value)
 const handleClose = () => {
   open.value = false
 }
+
+watchEffect(() => {
+  if (open.value) {
+    document.body.style.overflowY = 'hidden'
+  } else {
+    document.body.style.overflowY = 'auto'
+  }
+})
 </script>
 
 <template>
-  <header class="bg-custom-dark py-4 text-white relative">
+  <div
+    v-if="open"
+    class="fixed lg:hidden top-0 left-0 h-screen w-full bg-black/50 backdrop-blur z-[99]"
+  ></div>
+  <header class="bg-custom-dark py-4 text-white relative z-[999999]">
     <Container class="flex items-center justify-between">
       <a
         href="#"
